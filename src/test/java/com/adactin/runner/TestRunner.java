@@ -18,7 +18,9 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(
+@CucumberOptions(plugin = { "com.cucumber.listener.ExtentCucumberFormatter:src\\test\\resource\\reports\\report.html",
+		"html:src\\test\\resource\\reports", "json:src\\test\\resource\\reports\\report.json",
+		"junit:src\\test\\resource\\reports\\report.xml" },
 		features = "src\\test\\java\\com\\adactin\\feature\\",
 		tags = {"@TC1,@TC2"},
 		dryRun = false,strict=true,
